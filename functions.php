@@ -23,6 +23,47 @@ add_filter( 'ot_theme_mode', '__return_true' );
  */
 require( trailingslashit( get_template_directory() ) . 'option-tree/ot-loader.php' );
 
+add_action( 'init', 'custom_post_types_init' );
+/**
+ * Register a book post type.
+ *
+ * @link http://codex.wordpress.org/Function_Reference/register_post_type
+ */
+function custom_post_types_init() {
+	$labels = array(
+		'name'               => _x( 'Companies', 'post type general name', 'apcorp' ),
+		'singular_name'      => _x( 'Company', 'post type singular name', 'apcorp' ),
+		'menu_name'          => _x( 'Companies', 'admin menu', 'apcorp' ),
+		'name_admin_bar'     => _x( 'Company', 'add new on admin bar', 'apcorp' ),
+		'add_new'            => _x( 'Add New', 'Company', 'apcorp' ),
+		'add_new_item'       => __( 'Add New Company', 'apcorp' ),
+		'new_item'           => __( 'New Company', 'apcorp' ),
+		'edit_item'          => __( 'Edit Company', 'apcorp' ),
+		'view_item'          => __( 'View Company', 'apcorp' ),
+		'all_items'          => __( 'All Companies', 'apcorp' ),
+		'search_items'       => __( 'Search Companies', 'apcorp' ),
+		'parent_item_colon'  => __( 'Parent Companies:', 'apcorp' ),
+		'not_found'          => __( 'No companies found.', 'apcorp' ),
+		'not_found_in_trash' => __( 'No companies found in Trash.', 'apcorp' )
+	);
+
+	$args = array(
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'company' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => null,
+		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'revisions' )
+	);
+
+	register_post_type( 'company', $args );
+}
 
 if ( ! function_exists( 'apcorp_setup' ) ) :
 /**
