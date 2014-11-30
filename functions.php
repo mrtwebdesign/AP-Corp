@@ -12,6 +12,18 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
 }
 
+
+/**
+ * Required: set 'ot_theme_mode' filter to true.
+ */
+add_filter( 'ot_theme_mode', '__return_true' );
+
+/**
+ * Required: include OptionTree.
+ */
+require( trailingslashit( get_template_directory() ) . 'option-tree/ot-loader.php' );
+
+
 if ( ! function_exists( 'apcorp_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
