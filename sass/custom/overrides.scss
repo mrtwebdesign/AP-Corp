@@ -1,3 +1,32 @@
 /*--13.0 Overrides --*/
 
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+
+
+html {
+	background-color:#2c2c2c;
+	background-image: url("/images/bg_edge.png");
+
+body {
+	background-color:black;
+	color:#EEE;
+}
+
+}
+
 
