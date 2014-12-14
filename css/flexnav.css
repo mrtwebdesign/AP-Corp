@@ -1,8 +1,6 @@
 /* Flexnav Base Styles */
 .flexnav {
   -webkit-transition: none;
-  -moz-transition: none;
-  -ms-transition: none;
   transition: none;
   -webkit-transform-style: preserve-3d;
   overflow: hidden;
@@ -15,8 +13,6 @@
     max-height: 2000px;
     opacity: 1;
     -webkit-transition: all .5s ease-in-out;
-    -moz-transition: all .5s ease-in-out;
-    -ms-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out; }
   .flexnav.one-page {
     position: fixed;
@@ -33,7 +29,7 @@
     padding: .96em;
     z-index: 2;
     overflow: hidden;
-    color: #222222;
+    color: #222;
     background: #a6a6a2;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
   .flexnav li ul {
@@ -75,7 +71,7 @@
   display: block;
   padding: 1em;
   background: #a6a6a2;
-  color: #222222;
+  color: #222;
   cursor: pointer;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
   .menu-button.one-page {
@@ -206,3 +202,5 @@
   display: none; }
 .oldie.ie7 .flexnav li {
   width: 19.9%; }
+
+/*# sourceMappingURL=flexnav.css.map */

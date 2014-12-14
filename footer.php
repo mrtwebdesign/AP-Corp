@@ -20,6 +20,11 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+<script>
 
+
+$(".flexnav").flexNav();
+
+</script>
 </body>
 </html>

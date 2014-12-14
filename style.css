@@ -375,8 +375,7 @@ a {
 .main-navigation {
   clear: both;
   display: block;
-  float: left;
-  width: 100%; }
+  float: left; }
   .main-navigation ul {
     list-style: none;
     margin: 0;
@@ -653,6 +652,12 @@ object {
 13.0 Overrides
 --------------------------------------------------------------*/
 /*--13.0 Overrides --*/
+.pt-sans {
+  font-family: 'PT Sans', sans-serif; }
+
+.roboto-slab, html body {
+  font-family: 'Roboto Slab', serif; }
+
 @media (min-width: 768px) {
   .container {
     width: 750px; } }
@@ -669,14 +674,18 @@ html {
     background-color: black;
     color: #EEE; }
 
-#masthead .row {
+#masthead {
   position: relative; }
+
+#logo img {
+  max-width: 100%;
+  height: auto; }
 
 #site-navigation {
   position: absolute;
   bottom: 0;
   right: 0;
-  font-size: 2em; }
+  font-size: 1.1em; }
 
 body, div, header, footer {
   outline: 1px solid #AAAAAA; }
