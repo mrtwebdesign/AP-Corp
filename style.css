@@ -669,4 +669,16 @@ html {
     background-color: black;
     color: #EEE; }
 
+#masthead .row {
+  position: relative; }
+
+#site-navigation {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 2em; }
+
+body, div, header, footer {
+  outline: 1px solid #AAAAAA; }
+
 /*# sourceMappingURL=style.css.map */

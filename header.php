@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 /**
  * The header for our theme.
@@ -6,7 +7,7 @@
  *
  * @package A-P Corp 1.0
  */
-?><!DOCTYPE html>
+?>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
