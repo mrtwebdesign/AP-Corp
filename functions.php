@@ -19,6 +19,11 @@ if ( ! isset( $content_width ) ) {
 add_filter( 'ot_theme_mode', '__return_true' );
 
 /**
+ * Required: include CMB2
+ */
+require( trailingslashit( get_template_directory() ) . 'functions-cmb2.php' );
+
+/**
  * Required: include OptionTree.
  */
 require( trailingslashit( get_template_directory() ) . 'option-tree/ot-loader.php' );
@@ -45,7 +50,7 @@ function custom_post_types_init() {
 		'parent_item_colon'  => __( 'Parent Companies:', 'apcorp' ),
 		'not_found'          => __( 'No companies found.', 'apcorp' ),
 		'not_found_in_trash' => __( 'No companies found in Trash.', 'apcorp' )
-	);
+		);
 
 	$company_args = array(
 		'labels'             => $company_labels,
@@ -60,7 +65,7 @@ function custom_post_types_init() {
 		'hierarchical'       => false,
 		'menu_position'      => 21,
 		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'revisions' )
-	);
+		);
 
 	register_post_type( 'company', $company_args );
 
@@ -79,7 +84,7 @@ function custom_post_types_init() {
 		'parent_item_colon'  => __( 'Parent Product Lines:', 'apcorp' ),
 		'not_found'          => __( 'No product lines found.', 'apcorp' ),
 		'not_found_in_trash' => __( 'No product lines found in Trash.', 'apcorp' )
-	);
+		);
 
 	$product_line_args = array(
 		'labels'             => $product_line_labels,
@@ -94,7 +99,7 @@ function custom_post_types_init() {
 		'hierarchical'       => false,
 		'menu_position'      => 22,
 		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'revisions' )
-	);
+		);
 
 	register_post_type( 'product-line', $product_line_args );
 }
@@ -120,7 +125,7 @@ function create_product_taxonomy() {
 		'choose_from_most_used'      => __( 'Choose from the most used products' ),
 		'not_found'                  => __( 'No products found.' ),
 		'menu_name'                  => __( 'Products' ),
-	);
+		);
 
 	$args = array(
 		'hierarchical'          => false,
@@ -130,11 +135,12 @@ function create_product_taxonomy() {
 		'update_count_callback' => '_update_post_term_count',
 		'query_var'             => true,
 		'rewrite'               => array( 'slug' => 'product' ),
-	);
+		);
 
-register_taxonomy( 'product', array( 'product-line', 'company'), $args );
+	register_taxonomy( 'product', array( 'product-line', 'company'), $args );
 
 }
+
 
 
 if ( ! function_exists( 'apcorp_setup' ) ) :
@@ -169,7 +175,7 @@ function apcorp_setup() {
 	register_nav_menus( array(
 		'topmenubar' => __( 'Top Menu Bar', 'apcorp' ),
 		'footer' => __( 'Footer', 'apcorp' ),
-	) );
+		) );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -177,7 +183,7 @@ function apcorp_setup() {
 	 */
 	add_theme_support( 'html5', array(
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
-	) );
+		) );
 
 	/*
 	 * Enable support for Post Formats.
@@ -185,13 +191,13 @@ function apcorp_setup() {
 	 */
 	add_theme_support( 'post-formats', array(
 		'aside', 'image', 'video', 'quote', 'link',
-	) );
+		) );
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'apcorp_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
-	) ) );
+		) ) );
 }
 endif; // apcorp_setup
 add_action( 'after_setup_theme', 'apcorp_setup' );
@@ -203,14 +209,45 @@ add_action( 'after_setup_theme', 'apcorp_setup' );
  */
 function apcorp_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'apcorp' ),
-		'id'            => 'sidebar-1',
+		'name'          => __( 'Right Sidebar', 'apcorp' ),
+		'id'            => 'right-sidebar',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
-	) );
+		) );
+	register_sidebar( array(
+		'name'          => __( 'Footer Left', 'apcorp' ),
+		'id'            => 'footer-left',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+		) );
+	register_sidebar( array(
+		'name'          => __( 'Footer Middle', 'apcorp' ),
+		'id'            => 'footer-middle',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+		) );
+	register_sidebar( array(
+		'name'          => __( 'Footer Right', 'apcorp' ),
+		'id'            => 'footer-right',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+		) );
+
+
+
+
 }
 add_action( 'widgets_init', 'apcorp_widgets_init' );
 
@@ -220,8 +257,9 @@ add_action( 'widgets_init', 'apcorp_widgets_init' );
 function apcorp_scripts() {
 	wp_enqueue_style( 'apcorp-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'flexnav-css', get_template_directory_uri().'/css/flexnav.css' );
-	wp_enqueue_script( 'flexnav', get_template_directory_uri() . '/js/jquery.flexnav.js', array('jqery'), '1.3.3', true );
-
+		wp_enqueue_style( 'flexnav-css', get_template_directory_uri().'/css/flexslider.css' );
+	wp_enqueue_script( 'flexnav', get_template_directory_uri() . '/js/jquery.flexnav.js', array('jquery'), '1.3.3', true );
+	wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/flexslider.js', array('jquery'), '1.3.3', true );
 //	wp_enqueue_script( 'apcorp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 //	wp_enqueue_script( 'apcorp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
@@ -255,3 +293,12 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+
+
+
+
+
+
+

@@ -8,22 +8,40 @@
  */
 ?>
 
-	</div><!-- #content -->
+</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer container" role="contentinfo">
+<footer id="colophon" class="site-footer container" role="contentinfo">
+	<div class="row">
+		<div class="col-md-4">
+			<?php dynamic_sidebar( 'footer-left' ); ?>
+		</div>
+		<div class="col-md-4">
+			<?php dynamic_sidebar( 'footer-middle' ); ?>
+		</div>
+		<div class="col-md-4">
+			<?php dynamic_sidebar( 'footer-right' ); ?>
+		</div>
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'apcorp' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'apcorp' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
 			<?php printf( __( 'Theme: %1$s by %2$s.', 'apcorp' ), 'A-P Corp 1.0', '<a href="http://mrtwebdesign.com" rel="designer">Matthew Taylor</a>' ); ?>
 		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+
+
+	</div>
+</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 <script>
+// Can also be used with $(document).ready()
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide"
+  });
+});
 
-
-$(".flexnav").flexNav();
+	$(".flexnav").flexNav();
 
 </script>
 </body>

@@ -687,9 +687,6 @@ html {
   right: 0;
   font-size: 1.1em; }
 
-body, div, header, footer {
-  outline: 1px solid #AAAAAA; }
-
 .dropdown-submenu {
   position: relative; }
 

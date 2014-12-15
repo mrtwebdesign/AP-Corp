@@ -58,9 +58,7 @@ html {
 	font-size:1.1em;
 }
 
-body, div, header, footer {
-	outline:1px solid #AAAAAA;
-}
+
 
 .dropdown-submenu{position:relative;}
 .dropdown-submenu>.dropdown-menu{top:0;left:100%;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;}
@@ -78,3 +76,6 @@ body, div, header, footer {
 
 
 
+body, div, header, footer {
+	//outline:1px solid #AAAAAA;
+}
