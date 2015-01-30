@@ -60,59 +60,60 @@ function cmb2_sample_metaboxes( array $meta_boxes ) {
 				'id'   => $prefix . 'company_id',
 				'type' => 'text',
 				// 'repeatable' => true,
+				),
 			),
-		),
-	);
+		);
 
 	/**
 	 * Repeatable Field Groups
 	 */
 	$meta_boxes['home_slider'] = array(
 		'id'           => 'home-slider',
-		'title'        => __( 'Repeating Field Group', 'cmb2' ),
+		'title'        => __( 'Home Page Slider', 'cmb2' ),
 		'object_types' => array( 'page', ),
 		'show_on' => array( 'key' => 'page-template', 'value' => 'home.php' ),
 		'fields'       => array(
 			array(
-				'id'          => $prefix . 'repeat_group',
+				'id'          => $prefix . 'home-slides',
 				'type'        => 'group',
-				'description' => __( 'Generates reusable form entries', 'cmb2' ),
 				'options'     => array(
-					'group_title'   => __( 'Entry {#}', 'cmb2' ), // {#} gets replaced by row number
-					'add_button'    => __( 'Add Another Entry', 'cmb2' ),
-					'remove_button' => __( 'Remove Entry', 'cmb2' ),
+					'group_title'   => __( 'Slide #{#}', 'cmb2' ), // {#} gets replaced by row number
+					'add_button'    => __( 'Add Another Slide', 'cmb2' ),
+					'remove_button' => __( 'Remove Slide', 'cmb2' ),
 					'sortable'      => true, // beta
-				),
+					),
 				// Fields array works the same, except id's only need to be unique for this group. Prefix is not needed.
 				'fields'      => array(
 					array(
-						'name' => 'Entry Title',
+						'name' => 'Slide Title',
 						'id'   => 'title',
 						'type' => 'text',
 						// 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
-					),
+						),
 					array(
-						'name' => 'Description',
+						'name' => 'Slide Description',
 						'description' => 'Write a short description for this entry',
 						'id'   => 'description',
 						'type' => 'textarea_small',
-					),
+						),
 					array(
-						'name' => 'Entry Image',
+						'name' => 'Slide Image',
 						'id'   => 'image',
-						'type' => 'file',
-					),
+						'type' => 'file_list',
+						'preview_size' => array( 100, 100 ),
+						'allow' => array( 'attachment' ), // limit to just attachments
+						),
 					array(
 						'name' => 'Image Caption',
 						'id'   => 'image_caption',
 						'type' => 'text',
+						),
 					),
 				),
-			),
-		),
-	);
+),
+);
 
 	// Add other metaboxes as needed
 
-	return $meta_boxes;
+return $meta_boxes;
 }

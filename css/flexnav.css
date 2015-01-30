@@ -20,22 +20,23 @@
     right: 5%;
     max-width: 200px; }
   .flexnav li {
-    font-size: 100%;
+    font-size: 14px;
+    line-height: 14px;
     position: relative;
     overflow: hidden; }
   .flexnav li a {
     position: relative;
     display: block;
-    padding: .96em;
+    padding: 6px 14px;
     z-index: 2;
     overflow: hidden;
     color: #222;
-    background: #a6a6a2;
+    background: #FFFFFF;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
   .flexnav li ul {
     width: 100%; }
     .flexnav li ul li {
-      font-size: 100%;
+      font-size: 14px;
       position: relative;
       overflow: hidden; }
   .flexnav li ul.flexnav-show li {
@@ -52,8 +53,8 @@
     z-index: 999;
     top: 0;
     right: 0;
-    width: 50px;
-    height: 50px;
+    width: 26px;
+    height: 26px;
     display: inline-block;
     background: #acaca1;
     background: rgba(0, 0, 0, 0.075);
@@ -62,8 +63,8 @@
       cursor: pointer; }
     .flexnav .touch-button .navicon {
       position: relative;
-      top: 1.4em;
-      font-size: 12px;
+      top: 6px;
+      font-size: 16px;
       color: #666; }
 
 .menu-button {
@@ -202,5 +203,14 @@
   display: none; }
 .oldie.ie7 .flexnav li {
   width: 19.9%; }
+
+.flexnav li.menu-item a {
+  background-color: #ffffff; }
+
+.flexnav li.current-menu-parent > a {
+  background-color: #dfebef; }
+
+.flexnav li.current-menu-item a {
+  background-color: #dfebef; }
 
 /*# sourceMappingURL=flexnav.css.map */

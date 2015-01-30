@@ -5,6 +5,10 @@ $top_level: #a6a6a2;
 $second_level: #b2b2af;
 $third_level: #bfbfbc;
 $fourth_level: #cbcbc9;
+$link_font_size: 14px;
+$link_icon_size: 16px;
+$link_height_padding: 6px;
+$link_width_padding: 14px;
 
 .flexnav {
 	-webkit-transition: none;
@@ -37,25 +41,26 @@ $fourth_level: #cbcbc9;
 	}
 	
 	li {
-		font-size: 100%;
+		font-size: $link_font_size;
+		line-height: $link_font_size;
 		position: relative;
 		overflow: hidden;
 	}
 	li a {
 		position: relative;
 		display: block;
-		padding: .96em;
+		padding: $link_height_padding $link_width_padding;
 		z-index: 2;
 		overflow: hidden;
 		color: $nav_text;
-		background: #a6a6a2;
+		background: #FFFFFF;
 		border-bottom: 1px solid rgba(0,0,0,.15);
 	}
 	li ul {
 		width: 100%;   
 		
 		li {
-			font-size: 100%;
+			font-size: $link_font_size;
 			position: relative;
 			overflow: hidden;		
 		}
@@ -82,8 +87,8 @@ $fourth_level: #cbcbc9;
 		z-index: 999;
 		top: 0;
 		right: 0;
-		width: 50px;
-		height: 50px;
+		width: (($link_height_padding * 2) + $link_font_size);
+		height: (($link_height_padding * 2) + $link_font_size);
 		display: inline-block;
 		background: #acaca1;
 		background: rgba(0,0,0,.075);
@@ -93,8 +98,8 @@ $fourth_level: #cbcbc9;
 		}
 		.navicon {
 			position: relative;
-			top: 1.4em;
-			font-size: 12px;
+			top: $link_height_padding;
+			font-size: $link_icon_size;
 			color: #666;
 		}
 	}
@@ -127,7 +132,7 @@ $fourth_level: #cbcbc9;
 		text-align: center;
 				
 		.navicon {
-			font-size: 16px;
+			font-size: $link_icon_size;
 			position: relative;
 			top: 1em;
 			color: #666;
@@ -278,3 +283,21 @@ $fourth_level: #cbcbc9;
 		width: 19.9%;
 	}
 }
+
+
+.flexnav li.menu-item a {
+	background-color:#ffffff;
+}
+.flexnav li.current-menu-parent>a
+ {
+	background-color: #dfebef;
+}
+
+
+
+.flexnav li.current-menu-item a
+ {
+	background-color: #dfebef;
+}
+
+

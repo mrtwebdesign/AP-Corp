@@ -198,6 +198,9 @@ function apcorp_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 		) ) );
+
+
+	add_image_size( 'home-slide', 1140, 400, true ); // 1140 x 400, cropped. For home page slider
 }
 endif; // apcorp_setup
 add_action( 'after_setup_theme', 'apcorp_setup' );
@@ -251,15 +254,24 @@ function apcorp_widgets_init() {
 }
 add_action( 'widgets_init', 'apcorp_widgets_init' );
 
+
+
+
+// bump up the jQuery to early load and head
+function insert_jquery(){
+	wp_enqueue_script('jquery', false, array(), false, false);
+}
+add_filter('wp_enqueue_scripts','insert_jquery',1);
+
 /**
  * Enqueue scripts and styles.
  */
 function apcorp_scripts() {
 	wp_enqueue_style( 'apcorp-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'flexnav-css', get_template_directory_uri().'/css/flexnav.css' );
-		wp_enqueue_style( 'flexnav-css', get_template_directory_uri().'/css/flexslider.css' );
+	wp_enqueue_style( 'flexnav-css', get_template_directory_uri().'/css/flexslider.css' );
 	wp_enqueue_script( 'flexnav', get_template_directory_uri() . '/js/jquery.flexnav.js', array('jquery'), '1.3.3', true );
-	wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/flexslider.js', array('jquery'), '1.3.3', true );
+	wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', array('jquery'), '1.3.3', true );
 //	wp_enqueue_script( 'apcorp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 //	wp_enqueue_script( 'apcorp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 

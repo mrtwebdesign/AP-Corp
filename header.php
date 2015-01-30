@@ -55,7 +55,7 @@
 				<?php 
 
 $menu_args = array(
-	'theme_location'  => 'primary',
+	'theme_location'  => 'topmenubar',
 	'menu'            => '',
 	'container'       => 'div',
 	'container_class' => '',

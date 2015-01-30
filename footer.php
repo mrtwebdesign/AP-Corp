@@ -35,14 +35,24 @@
 <?php wp_footer(); ?>
 <script>
 // Can also be used with $(document).ready()
-$(window).load(function() {
-  $('.flexslider').flexslider({
-    animation: "slide"
+jQuery(window).load(function() {
+  jQuery('#slider').flexslider({
+    animation: "fade",
+    pauseOnHover: true,
+    controlNav: false,
+    directionNav: false,
   });
 });
 
+jQuery(document).ready(function($) {
 	$(".flexnav").flexNav();
+});
+
 
 </script>
+
+<?php //print_r(get_taxonomies()) ; ?>
+
+
 </body>
 </html>

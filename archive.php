@@ -9,15 +9,15 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
 				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
+				the_archive_title( '<h1 class="page-title">', '</h1>' );
+				the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
 
@@ -29,21 +29,74 @@ get_header(); ?>
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					get_template_part( 'content', get_post_format() );
-				?>
+					?>
+					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+						<header class="entry-header">
+							<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
-			<?php endwhile; ?>
+							<?php if ( 'post' == get_post_type() ) : ?>
+								<div class="entry-meta">
+									<?php apcorp_posted_on(); ?>
+								</div><!-- .entry-meta -->
+							<?php endif; ?>
+						</header><!-- .entry-header -->
 
-			<?php apcorp_paging_nav(); ?>
+						<div class="entry-content">
+							<?php
+							/* translators: %s: Name of current post */
+							the_content( sprintf(
+								__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'apcorp' ),
+								the_title( '<span class="screen-reader-text">"', '"</span>', false )
+								) );
+								?>
 
-		<?php else : ?>
+								<?php
+								wp_link_pages( array(
+									'before' => '<div class="page-links">' . __( 'Pages:', 'apcorp' ),
+									'after'  => '</div>',
+									) );
+									?>
+								</div><!-- .entry-content -->
+<hr>
+								<footer class="entry-footer">
+															<?php
+							$taxonomy = 'product';
 
-			<?php get_template_part( 'content', 'none' ); ?>
+							// get the term IDs assigned to post.
+							$post_terms = wp_get_object_terms( $post->ID, $taxonomy, array( 'fields' => 'ids' ) );
+							// separator between links
+							$separator = ', ';
 
-		<?php endif; ?>
+							if ( !empty( $post_terms ) && !is_wp_error( $post_terms ) ) {
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+								$term_ids = implode( ',' , $post_terms );
+								$terms = wp_list_categories( 'title_li=&style=none&echo=0&taxonomy=' . $taxonomy . '&include=' . $term_ids );
+								$terms = rtrim( trim( str_replace( '<br />',  $separator, $terms ) ), $separator );
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+							// display post categories
+								echo  $terms;
+							}
+
+							?>
+							
+									<?php apcorp_entry_footer(); ?>
+								</footer><!-- .entry-footer -->
+							</article><!-- #post-## -->
+
+
+
+						<?php endwhile; ?>
+
+						<?php apcorp_paging_nav(); ?>
+
+					<?php else : ?>
+
+						<?php get_template_part( 'content', 'none' ); ?>
+
+					<?php endif; ?>
+
+				</main><!-- #main -->
+			</div><!-- #primary -->
+
+			<?php get_sidebar(); ?>
+			<?php get_footer(); ?>
