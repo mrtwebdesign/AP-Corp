@@ -77,6 +77,7 @@
         $nav.removeClass("lg-screen").addClass("sm-screen");
         if (settings.calcItemWidths === true) {
           $top_nav_items.css('width', '100%');
+
         }
         selector = settings['buttonSelector'] + ', ' + settings['buttonSelector'] + ' .touch-button';
         $(selector).removeClass('active');

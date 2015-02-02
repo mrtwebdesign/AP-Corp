@@ -7,7 +7,7 @@ $third_level: #bfbfbc;
 $fourth_level: #cbcbc9;
 $link_font_size: 14px;
 $link_icon_size: 16px;
-$link_height_padding: 6px;
+$link_height_padding: 12px;
 $link_width_padding: 14px;
 
 .flexnav {
@@ -55,6 +55,7 @@ $link_width_padding: 14px;
 		color: $nav_text;
 		background: #FFFFFF;
 		border-bottom: 1px solid rgba(0,0,0,.15);
+
 	}
 	li ul {
 		width: 100%;   
@@ -104,6 +105,12 @@ $link_width_padding: 14px;
 		}
 	}
 }
+
+
+
+
+
+
 .menu-button {
 	position: relative;
 	display: block;
@@ -146,6 +153,30 @@ $link_width_padding: 14px;
 	}
 	.flexnav {
 		overflow: visible;
+
+
+		&>li {
+
+
+			&>a {
+				white-space: nowrap;
+
+			}
+			&>ul>li>a{
+				min-width:200px;
+			}
+		}	
+		&>li.menu-item-has-children{
+			&>a {
+				padding-right:26px;
+
+			}
+			.touch-button {
+				background:none;
+				width:26px;
+			}		
+		}
+
 		&.opacity {
 			opacity: 1;
 		}
@@ -298,6 +329,11 @@ $link_width_padding: 14px;
 .flexnav li.current-menu-item a
 {
 	background-color: #dfebef;
+}
+@media screen and (max-width:991px){
+	.flexnav>li {
+		width:auto !important;
+	}
 }
 
 

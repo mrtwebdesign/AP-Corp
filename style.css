@@ -369,34 +369,34 @@ a {
 /*--------------------------------------------------------------
 5.2 Menus
 --------------------------------------------------------------*/
-.main-navigation {
+.xmain-navigation {
   clear: both;
   display: block;
   float: left; }
-  .main-navigation ul {
+  .xmain-navigation ul {
     list-style: none;
     margin: 0;
     padding-left: 0; }
-    .main-navigation ul ul {
+    .xmain-navigation ul ul {
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
       float: left;
       position: absolute;
       top: 1.5em;
       left: -999em;
       z-index: 99999; }
-      .main-navigation ul ul ul {
+      .xmain-navigation ul ul ul {
         left: -999em;
         top: 0; }
-      .main-navigation ul ul li:hover > ul {
+      .xmain-navigation ul ul li:hover > ul {
         left: 100%; }
-      .main-navigation ul ul a {
+      .xmain-navigation ul ul a {
         width: 200px; }
-    .main-navigation ul li:hover > ul {
+    .xmain-navigation ul li:hover > ul {
       left: auto; }
-  .main-navigation li {
+  .xmain-navigation li {
     float: left;
     position: relative; }
-  .main-navigation a {
+  .xmain-navigation a {
     display: block;
     text-decoration: none; }
 
@@ -728,6 +728,7 @@ html {
     padding: 0; }
 
 #site-navigation {
+  margin-top: 20px;
   z-index: 999999; }
 
 .single .entry-content li.cat-item {
