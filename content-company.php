@@ -14,6 +14,10 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
+<div class="company-thumbnail">
+<?php echo get_the_post_thumbnail(); ?>
+</div>
+
 		<?php the_content(); ?>
 		<?php
 

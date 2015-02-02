@@ -36,16 +36,24 @@
 <script>
 // Can also be used with $(document).ready()
 jQuery(window).load(function() {
-  jQuery('#slider').flexslider({
-    animation: "fade",
-    pauseOnHover: true,
-    controlNav: false,
-    directionNav: false,
-  });
+	jQuery('#slider').flexslider({
+		animation: "fade",
+		pauseOnHover: true,
+		controlNav: false,
+		directionNav: false,
+	});
 });
 
 jQuery(document).ready(function($) {
-	$(".flexnav").flexNav();
+	$(".flexnav").flexNav({
+		'animationSpeed': 250,
+		'transitionOpacity': true,
+		'buttonSelector': '.menu-button',
+		'hoverIntent': false,
+		'hoverIntentTimeout': 150,
+		'calcItemWidths': true,
+		'hover': true
+	});
 });
 
 

@@ -39,7 +39,7 @@
 						<img src="<?php echo get_template_directory_uri(); ?>/images/ap_logo_300x249.png">
 					</a>
 				</div>	
-				<div class="col-sm-8 col-md-9">
+				<div class="col-xs-8 col-sm-8 col-md-9">
 					<div class="site-branding">
 						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 						<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
@@ -49,34 +49,37 @@
 
 
 				</div>
+				<nav id="site-navigation" class="col-xs-12 col-sm-8 col-md-9 main-navigation" role="navigation">
+					<div class="menu-button"><?php _e( 'Primary Menu', 'apcorp' ); ?></div>
+					<?php 
+
+					$menu_args = array(
+						'theme_location'  => 'topmenubar',
+						'menu'            => '',
+						'container'       => 'div',
+						'container_class' => '',
+						'container_id'    => '',
+						'menu_class'      => 'menu',
+						'menu_id'         => '',
+						'echo'            => true,
+						'fallback_cb'     => 'wp_page_menu',
+						'before'          => '',
+						'after'           => '',
+						'link_before'     => '',
+						'link_after'      => '',
+						'items_wrap'      => '<ul data-breakpoint="768" id="%1$s" class="flexnav %2$s">%3$s</ul>',
+						'depth'           => 0,
+						'walker'          => ''
+						);
+
+					wp_nav_menu( $menu_args );
+
+					?>
+				</nav><!-- #site-navigation -->				
 			</div>
-			<nav id="site-navigation" class="col-sm-8 col-md-9 main-navigation" role="navigation">
-				<div class="menu-button"><?php _e( 'Primary Menu', 'apcorp' ); ?></div>
-				<?php 
 
-$menu_args = array(
-	'theme_location'  => 'topmenubar',
-	'menu'            => '',
-	'container'       => 'div',
-	'container_class' => '',
-	'container_id'    => '',
-	'menu_class'      => 'menu',
-	'menu_id'         => '',
-	'echo'            => true,
-	'fallback_cb'     => 'wp_page_menu',
-	'before'          => '',
-	'after'           => '',
-	'link_before'     => '',
-	'link_after'      => '',
-	'items_wrap'      => '<ul data-breakpoint="800" id="%1$s" class="flexnav %2$s">%3$s</ul>',
-	'depth'           => 0,
-	'walker'          => ''
-);
 
-wp_nav_menu( $menu_args );
 
-?>
-			</nav><!-- #site-navigation -->
 		</header><!-- #masthead -->
 
 		<div id="content" class="site-content container">

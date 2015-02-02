@@ -12,26 +12,26 @@ $link_width_padding: 14px;
 
 .flexnav {
 	-webkit-transition: none;
-  -moz-transition: none;
-  -ms-transition: none;
-  transition: none;
+	-moz-transition: none;
+	-ms-transition: none;
+	transition: none;
 	-webkit-transform-style: preserve-3d; // stop webkit flicker
-  overflow: hidden;
+	overflow: hidden;
 	margin: 0 auto;
 	width: 100%;
-  max-height: 0;
-  
-  &.opacity {
-    opacity: 0;
-  }
+	max-height: 0;
+
+	&.opacity {
+		opacity: 0;
+	}
 	
 	&.flexnav-show {
 		max-height: 2000px;
-    opacity: 1;
+		opacity: 1;
 		-webkit-transition: all .5s ease-in-out;
-    -moz-transition: all .5s ease-in-out;
-    -ms-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
+		-moz-transition: all .5s ease-in-out;
+		-ms-transition: all .5s ease-in-out;
+		transition: all .5s ease-in-out;
 	}
 	&.one-page {
 		position: fixed;
@@ -66,7 +66,7 @@ $link_width_padding: 14px;
 		}
 	}
 	li ul.flexnav-show {
-    
+
 		li {
 			overflow: visible;
 		}
@@ -130,7 +130,7 @@ $link_width_padding: 14px;
 		height: 50px;
 		display: inline-block;
 		text-align: center;
-				
+
 		.navicon {
 			font-size: $link_icon_size;
 			position: relative;
@@ -140,14 +140,14 @@ $link_width_padding: 14px;
 	}
 }
 
-@media all and (min-width: 800px) {
+@media all and (min-width: 768px) {
 	body.one-page {
 		padding-top: 70px;
 	}
 	.flexnav {
 		overflow: visible;
 		&.opacity {
-		  opacity: 1;
+			opacity: 1;
 		}
 		&.one-page {
 			top: 0;
@@ -161,7 +161,7 @@ $link_width_padding: 14px;
 			display: block;	
 			background-color: #a6a6a2;
 			overflow: visible;
-      width: 20%;
+			//width: 20%;
 		}
 		li a {
 			border-left: 1px solid #acaca1;
@@ -223,7 +223,7 @@ $link_width_padding: 14px;
 			float: left;
 			display: block;	
 			background-color: #a6a6a2;	
-      width: 20%;
+			width: 20%;
 			min-height: 50px;
 			overflow: visible;
 		}
@@ -266,7 +266,7 @@ $link_width_padding: 14px;
 			ul.open {
 				margin-left: 100%;
 				top: 0;
-  				display: block;
+				display: block;
 				width: 100%;
 				overflow: visible;
 			}
@@ -289,14 +289,14 @@ $link_width_padding: 14px;
 	background-color:#ffffff;
 }
 .flexnav li.current-menu-parent>a
- {
+{
 	background-color: #dfebef;
 }
 
 
 
 .flexnav li.current-menu-item a
- {
+{
 	background-color: #dfebef;
 }
 
