@@ -268,9 +268,10 @@ add_filter('wp_enqueue_scripts','insert_jquery',1);
  */
 function apcorp_scripts() {
 	wp_enqueue_style( 'apcorp-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'flexnav-css', get_template_directory_uri().'/css/flexnav.css' );
-	wp_enqueue_style( 'flexnav-css', get_template_directory_uri().'/css/flexslider.css' );
-	wp_enqueue_script( 'flexnav', get_template_directory_uri() . '/js/jquery.flexnav.js', array('jquery'), '1.3.3', true );
+	//wp_enqueue_style( 'flexnav-css', get_template_directory_uri().'/css/flexnav.css' );
+	//flexslider-css imported through scss just before overrides.
+	//wp_enqueue_style( 'flexslider-css', get_template_directory_uri().'/css/flexslider.css' );
+	//wp_enqueue_script( 'flexnav', get_template_directory_uri() . '/js/jquery.flexnav.js', array('jquery'), '1.3.3', true );
 	wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', array('jquery'), '1.3.3', true );
 //	wp_enqueue_script( 'apcorp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 //	wp_enqueue_script( 'apcorp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );

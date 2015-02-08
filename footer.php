@@ -45,15 +45,7 @@ jQuery(window).load(function() {
 });
 
 jQuery(document).ready(function($) {
-	$(".flexnav").flexNav({
-		'animationSpeed': 250,
-		'transitionOpacity': true,
-		'buttonSelector': '.menu-button',
-		'hoverIntent': false,
-		'hoverIntentTimeout': 150,
-		'calcItemWidths': true,
-		'hover': true
-	});
+
 });
 
 

@@ -45,12 +45,8 @@
 						<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 					</div><!-- .site-branding -->
 
-
-
-
-				</div>
 				<nav id="site-navigation" class="col-xs-12 col-sm-8 col-md-9 main-navigation" role="navigation">
-					<div class="menu-button"><?php _e( 'Primary Menu', 'apcorp' ); ?></div>
+					<div class="menu-button hidden"><?php _e( 'Primary Menu', 'apcorp' ); ?></div>
 					<?php 
 
 					$menu_args = array(
@@ -58,7 +54,7 @@
 						'menu'            => '',
 						'container'       => 'div',
 						'container_class' => '',
-						'container_id'    => '',
+						'container_id'    => 'menu-topmenubar',
 						'menu_class'      => 'menu',
 						'menu_id'         => '',
 						'echo'            => true,
@@ -67,7 +63,7 @@
 						'after'           => '',
 						'link_before'     => '',
 						'link_after'      => '',
-						'items_wrap'      => '<ul data-breakpoint="750" id="%1$s" class="flexnav %2$s">%3$s</ul>',
+						'items_wrap'      => '<ul data-breakpoint="750" id="%1$s" class=" %2$s">%3$s</ul>',
 						'depth'           => 0,
 						'walker'          => ''
 						);
@@ -75,7 +71,11 @@
 					wp_nav_menu( $menu_args );
 
 					?>
-				</nav><!-- #site-navigation -->				
+				</nav><!-- #site-navigation -->	
+
+
+				</div>
+			
 			</div>
 
 

@@ -1,64 +1,97 @@
-.xmain-navigation {
+#site-navigation {
+	padding:0;
+	width:100%;
+}
+#menu-topmenubar {
 	clear: both;
-	display: block;
-	float: left;
-	//width: 100%;
+	display: table;
+	padding:0;
+	width: 100%;
 
-	ul {
+	>ul {
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
+		width:100%;
+		display: table-row;
+		background-color:#FFFFFF;
+		>li {
+			display:table-cell;
+			position: relative;
 
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 1.5em;
-			left: -999em;
-			z-index: 99999;
+			>a {
+				text-align:center;
+			}
+
+			&:hover > a {
+			}
 
 			ul {
-				left: -999em;
-				top: 0;
-			}
+				display:none;
+				position: absolute;
+				margin: 0;
 
-			li {
-				&:hover > ul {
-					left: 100%;
+				top:2em;
+				box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+				background-color:#FFFFFF;
+				list-style: none;
+				ul {
+					display:none;
+					top:2em;
+				}
+
+				li {
+						left: 100%;					
+
+					a{
+						padding-left: 10px;
+
+					}									
+					&:hover > ul {
+
+
+					}
+				}
+
+				a {
+					width: auto;
+					font-size:0.85em;
+					line-height:2em;
+				}
+
+				:hover > a {
+
+				}
+
+				a:hover {
 				}
 			}
-
-			a {
-				width: 200px;
-			}
-
-			:hover > a {
-			}
-
-			a:hover {
+			&:hover ul{
+				display:block;
+				width:150%;
 			}
 		}
+		a {
+			display: block;
+			text-decoration: none;
+			//padding:5px 15px;
+			line-height:2em;
+			color:#4d4d4d;
 
-		li:hover > ul {
-			left: auto;
 		}
-	}
-	li {
-		float: left;
-		position: relative;
 
-		&:hover > a {
+		.current_page_item > a,
+		.current-menu-item > a,
+		.current_page_ancestor > a {
+			background-color: #dfebef;
 		}
+
 	}
-	a {
-		display: block;
-		text-decoration: none;
+	a:hover {
+		text-decoration: underline;
+		color:black;
 	}
 
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a {
-	}
 }
 
 /* Small menu */
@@ -80,7 +113,7 @@
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {
-	margin: 0 0 1.5em;
+	margin: 0.5em 0;
 	overflow: hidden;
 }
 

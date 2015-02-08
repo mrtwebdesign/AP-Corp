@@ -53,9 +53,7 @@ html {
 
 @media (min-width: 768px) {
 	#site-navigation {
-		position:absolute;
-		bottom:0;
-		right:0;
+
 		font-size:1.1em;
 	}
 }
@@ -97,7 +95,7 @@ body, div, header, footer {
 }
 
 #main article{
-	margin-top:30px;
+	margin-top:10px;
 }
 
 .archive #main > article {
@@ -113,14 +111,55 @@ h1 {
 h2 {
 	font-size: 24px;
 }
+
+	.site-title {
+margin-top:20px;
+		a {
+			color:#FFFFFF;
+			text-decoration: none;
+		}
+	}
+
 @media (max-width: 767px) {
 	.site-title {
-font-size:4vw;
+		font-size:4vw;
+		margin-top:2vw;
+		a {
+			color:#FFFFFF;
+			text-decoration: none;
+		}
 	}
 	.site-description {
-font-size:3.5vw;
+		font-size:3.5vw;
 	}
 }
 
-
+.single-company{
+	article {
+		background-color:#202020;
+		padding:40px;
+	}
+	.company-thumbnail {
+		background:#FFFFFF;
+		padding:10px;
+		border-radius: 5px;
+		border:1px solid #444444;
+		margin-bottom:15px;
+	}
+}
+.home #content .entry-content {
+	background:url(images/home_cover_1200x437.jpg);
+	background-size:cover;
+	p
+	.box-grey{
+		display:inline-block;
+		position:relative;
+		padding:10px 20px;
+		left:50%;
+		transform:translateX(-50%);
+		//width:50%;
+		margin:0 auto;
+		background:rgba(0,0,0,0.7);
+	}
+}
 
