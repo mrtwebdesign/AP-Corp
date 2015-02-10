@@ -44,8 +44,9 @@ jQuery(window).load(function() {
 	});
 });
 
-jQuery(document).ready(function($) {
 
+jQuery(document).ready(function() {
+	jQuery('ul.sf-menu').superfish();
 });
 
 
