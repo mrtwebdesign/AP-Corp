@@ -23,7 +23,7 @@
 		<div class="company-link">
 			<?php
 			$meta = get_post_custom($post_id);
-			print_r($meta);
+			//print_r($meta);
 			$slug = $meta[_apcorp_company_id][0];
 			$c_fetch = array(
 				'name' => $slug,
