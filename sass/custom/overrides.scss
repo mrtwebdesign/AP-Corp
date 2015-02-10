@@ -35,7 +35,7 @@ html {
 	body {
 		background-color:black;
 		color:#EEE;
-		@extend .roboto-slab;
+		@extend .pt-sans;
 		padding-top:20px; 
 	}
 }
@@ -112,13 +112,13 @@ h2 {
 	font-size: 24px;
 }
 
-	.site-title {
-margin-top:20px;
-		a {
-			color:#FFFFFF;
-			text-decoration: none;
-		}
+.site-title {
+	margin-top:20px;
+	a {
+		color:#FFFFFF;
+		text-decoration: none;
 	}
+}
 
 @media (max-width: 767px) {
 	.site-title {
@@ -134,17 +134,40 @@ margin-top:20px;
 	}
 }
 
-.single-company{
+.single-company, .single-product-line, .archive.tax-product {
 	article {
-		background-color:#202020;
+		background-color:#4d4d4d;
 		padding:40px;
+		font-size:1.2em;
+		header {
+			width:65%;
+			float:left;
+			clear:none;
+			h1 {
+				clear:none;
+				font-weight:bold;
+				color:#FFFFFF;
+			}
+		}
+		.entry-content {
+			margin:0;
+		}
 	}
-	.company-thumbnail {
+	.company-thumbnail, .product-line-thumbnail {
+		float:right;
+		clear:none;
+		width:35%;
 		background:#FFFFFF;
 		padding:10px;
 		border-radius: 5px;
 		border:1px solid #444444;
-		margin-bottom:15px;
+		margin:0 auto 15px auto;
+		img {
+			display:block;
+			position:relative;
+			margin-left:auto;
+			margin-right:auto;
+		}
 	}
 }
 .home #content .entry-content {

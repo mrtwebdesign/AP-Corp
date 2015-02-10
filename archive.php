@@ -40,7 +40,9 @@ get_header(); ?>
 								</div><!-- .entry-meta -->
 							<?php endif; ?>
 						</header><!-- .entry-header -->
-
+						<div class="company-thumbnail">
+							<?php echo get_the_post_thumbnail( $post_id, 'medium'); ?>
+						</div>
 						<div class="entry-content">
 							<?php
 							/* translators: %s: Name of current post */
@@ -57,28 +59,28 @@ get_header(); ?>
 									) );
 									?>
 								</div><!-- .entry-content -->
-<hr>
+								<hr>
 								<footer class="entry-footer">
-															<?php
-							$taxonomy = 'product';
+									<?php
+									$taxonomy = 'product';
 
 							// get the term IDs assigned to post.
-							$post_terms = wp_get_object_terms( $post->ID, $taxonomy, array( 'fields' => 'ids' ) );
+									$post_terms = wp_get_object_terms( $post->ID, $taxonomy, array( 'fields' => 'ids' ) );
 							// separator between links
-							$separator = ', ';
+									$separator = ', ';
 
-							if ( !empty( $post_terms ) && !is_wp_error( $post_terms ) ) {
+									if ( !empty( $post_terms ) && !is_wp_error( $post_terms ) ) {
 
-								$term_ids = implode( ',' , $post_terms );
-								$terms = wp_list_categories( 'title_li=&style=none&echo=0&taxonomy=' . $taxonomy . '&include=' . $term_ids );
-								$terms = rtrim( trim( str_replace( '<br />',  $separator, $terms ) ), $separator );
+										$term_ids = implode( ',' , $post_terms );
+										$terms = wp_list_categories( 'title_li=&style=none&echo=0&taxonomy=' . $taxonomy . '&include=' . $term_ids );
+										$terms = rtrim( trim( str_replace( '<br />',  $separator, $terms ) ), $separator );
 
 							// display post categories
-								echo  $terms;
-							}
+										echo  $terms;
+									}
 
-							?>
-							
+									?>
+									
 									<?php apcorp_entry_footer(); ?>
 								</footer><!-- .entry-footer -->
 							</article><!-- #post-## -->

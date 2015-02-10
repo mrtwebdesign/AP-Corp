@@ -27,6 +27,7 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700|Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+
 </head>
 <body <?php body_class(); ?>>
 	<div id="page" class="hfeed site">
@@ -34,6 +35,7 @@
 
 		<header id="masthead" class="site-header container" role="banner">
 			<div class="row">
+
 				<div id="logo" class="col-xs-4 col-sm-4 col-md-3">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 						<img src="<?php echo get_template_directory_uri(); ?>/images/ap_logo_300x249.png">
@@ -45,7 +47,9 @@
 						<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 					</div><!-- .site-branding -->
 
-				<nav id="site-navigation" class="col-xs-12 col-sm-8 col-md-9 main-navigation" role="navigation">
+				</div>
+
+				<nav id="site-navigation" class="col-xs-offset-4 col-sm-offset-4 col-md-offset-3  col-xs-8 col-sm-8 col-md-9 main-navigation" role="navigation">
 					<div class="menu-button hidden"><?php _e( 'Primary Menu', 'apcorp' ); ?></div>
 					<?php 
 
@@ -71,14 +75,9 @@
 					wp_nav_menu( $menu_args );
 
 					?>
-				</nav><!-- #site-navigation -->	
+				</nav><!-- #site-navigation -->				
 
-
-				</div>
-			
 			</div>
-
-
 
 		</header><!-- #masthead -->
 

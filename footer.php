@@ -46,7 +46,8 @@ jQuery(window).load(function() {
 
 
 jQuery(document).ready(function() {
-	jQuery('ul.sf-menu').superfish();
+	//jQuery('header nav').meanmenu();
+	//jQuery('ul.sf-menu').superfish();
 });
 
 

@@ -8,13 +8,43 @@
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-		<div class="entry-meta">
-			<?php apcorp_posted_on(); ?>
-		</div><!-- .entry-meta -->
+		<!-- div class="entry-meta">
+			<?php //apcorp_posted_on(); ?>
+		</div--><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
+
+	<?php if (has_post_thumbnail( $post_id )){ ?>
+	<div class="product-line-thumbnail">
+		<?php echo get_the_post_thumbnail( $post_id, 'medium'); ?>
+	</div>
+
 	<div class="entry-content">
-		<?php the_content(); ?>
+		<div class="company-link">
+			<?php
+			$meta = get_post_custom($post_id);
+			print_r($meta);
+			$slug = $meta[_apcorp_company_id][0];
+			$c_fetch = array(
+				'name' => $slug,
+				'post_type' => 'company'
+				);
+			$company = new WP_Query( $c_fetch );
+			$c_id = $company->posts[0]->ID;
+			$c_title = $company->posts[0]->post_title;
+		//print_r($company);
+		//echo $c_title;
+
+			?>
+			Company info: <a href="<?php echo get_permalink($c_id); ?>"><?php echo $c_title; ?></a>
+		</div>
+
+		<?php } ?>
+		<?php the_content(); 
+
+		?>
+
+		Product types:
 		<?php
 
 		$args = array(

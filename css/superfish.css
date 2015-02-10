@@ -30,8 +30,6 @@
 	top: 0;
 	left: 100%;
 }
-
-
 /*** DEMO SKIN ***/
 .sf-menu {
 	float: left;
@@ -111,3 +109,5 @@
 .sf-arrows ul .sfHover > .sf-with-ul:after {
 	border-left-color: white;
 }
+
+

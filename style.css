@@ -371,8 +371,10 @@ a {
 5.2 Menus
 --------------------------------------------------------------*/
 #site-navigation {
+  display: block;
+  position: absolute;
   padding: 0;
-  width: 100%; }
+  bottom: 0; }
 
 #menu-topmenubar {
   clear: both;
@@ -389,6 +391,24 @@ a {
     #menu-topmenubar > ul > li {
       display: table-cell;
       position: relative; }
+      #menu-topmenubar > ul > li.menu-item-has-children a {
+        padding-right: 10px; }
+      #menu-topmenubar > ul > li.menu-item-has-children:after {
+        font-size: 20px;
+        content: "\f0d7";
+        display: block;
+        position: absolute;
+        color: #444444;
+        top: 10px;
+        right: 10px;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-transform: translate(0, 0);
+            -ms-transform: translate(0, 0);
+                transform: translate(0, 0); }
       #menu-topmenubar > ul > li > a {
         text-align: center; }
       #menu-topmenubar > ul > li ul {
@@ -424,7 +444,8 @@ a {
       background-color: #dfebef; }
   #menu-topmenubar a:hover {
     text-decoration: underline;
-    color: black; }
+    color: black;
+    background-color: #EEEEEE; }
 
 /* Small menu */
 .menu-toggle {
@@ -921,10 +942,10 @@ html[xmlns] .slides {
 13.0 Overrides
 --------------------------------------------------------------*/
 /*--13.0 Overrides --*/
-.pt-sans {
+.pt-sans, html body {
   font-family: 'PT Sans', sans-serif; }
 
-.roboto-slab, html body {
+.roboto-slab {
   font-family: 'Roboto Slab', serif; }
 
 @media (min-width: 768px) {
@@ -1034,15 +1055,34 @@ h2 {
 
   .site-description {
     font-size: 3.5vw; } }
-.single-company article {
-  background-color: #202020;
-  padding: 40px; }
-.single-company .company-thumbnail {
+.single-company article, .single-product-line article, .archive.tax-product article {
+  background-color: #4d4d4d;
+  padding: 40px;
+  font-size: 1.2em; }
+  .single-company article header, .single-product-line article header, .archive.tax-product article header {
+    width: 65%;
+    float: left;
+    clear: none; }
+    .single-company article header h1, .single-product-line article header h1, .archive.tax-product article header h1 {
+      clear: none;
+      font-weight: bold;
+      color: #FFFFFF; }
+  .single-company article .entry-content, .single-product-line article .entry-content, .archive.tax-product article .entry-content {
+    margin: 0; }
+.single-company .company-thumbnail, .single-company .product-line-thumbnail, .single-product-line .company-thumbnail, .single-product-line .product-line-thumbnail, .archive.tax-product .company-thumbnail, .archive.tax-product .product-line-thumbnail {
+  float: right;
+  clear: none;
+  width: 35%;
   background: #FFFFFF;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #444444;
-  margin-bottom: 15px; }
+  margin: 0 auto 15px auto; }
+  .single-company .company-thumbnail img, .single-company .product-line-thumbnail img, .single-product-line .company-thumbnail img, .single-product-line .product-line-thumbnail img, .archive.tax-product .company-thumbnail img, .archive.tax-product .product-line-thumbnail img {
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto; }
 
 .home #content .entry-content {
   background: url(images/home_cover_1200x437.jpg);
