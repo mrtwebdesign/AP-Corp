@@ -12,23 +12,24 @@
 
 <footer id="colophon" class="site-footer container" role="contentinfo">
 	<div class="row">
-		<div class="col-md-4">
-			<?php dynamic_sidebar( 'footer-left' ); ?>
+	<div class="col-md-12 footer-inner">
+			<div class="row">
+				<div class="col-md-4">
+					<?php dynamic_sidebar( 'footer-left' ); ?>
+				</div>
+				<div class="col-md-4">
+					<?php dynamic_sidebar( 'footer-middle' ); ?>
+				</div>
+				<div class="col-md-4">
+					<?php dynamic_sidebar( 'footer-right' ); ?>
+				</div>
+			</div>
 		</div>
-		<div class="col-md-4">
-			<?php dynamic_sidebar( 'footer-middle' ); ?>
-		</div>
-		<div class="col-md-4">
-			<?php dynamic_sidebar( 'footer-right' ); ?>
-		</div>
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'apcorp' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'apcorp' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'apcorp' ), 'A-P Corp 1.0', '<a href="http://mrtwebdesign.com" rel="designer">Matthew Taylor</a>' ); ?>
-		</div><!-- .site-info -->
-
-
 	</div>
+	<div class="site-info">
+		© Copyright Andruss-Peskin Corporation
+	</div><!-- .site-info -->
+
 </footer><!-- #colophon -->
 </div><!-- #page -->
 

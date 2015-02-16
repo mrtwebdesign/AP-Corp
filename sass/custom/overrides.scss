@@ -28,15 +28,61 @@
 	}
 }
 
+
+
 html {
+
 	background-color:#2c2c2c;
 	background-image: url("images/bg_edge.png");
 
+	background-size:cover;
 	body {
-		background-color:black;
+
+		background-color:transparent;
 		color:#EEE;
 		@extend .pt-sans;
-		padding-top:20px; 
+		#page {
+		}
+	}
+}
+
+$footer-height:200px;
+
+html {
+	margin:0;
+	padding:0;
+	height:100%;	
+	body {
+		margin:0;
+		padding:20px 0 0 0;
+		height:100%;
+		#page{
+			min-height:100%;
+			position:relative;
+			header{
+
+			}
+			#content{
+				padding-bottom:$footer-height;
+				height:100%;
+			}
+			#colophon{
+				position:absolute;
+				bottom:0;
+				left:0;
+				width:100%;
+				height:$footer-height;
+				.footer-inner{
+					height:$footer-height;
+					padding-bottom:30px;
+				}
+				.site-info {
+					position:absolute;
+					bottom:0;
+					left:0;
+				}
+			}
+		}
 	}
 }
 
@@ -53,7 +99,7 @@ html {
 
 @media (min-width: 768px) {
 	#site-navigation {
-
+		padding-right:15px;
 		font-size:1.1em;
 	}
 }
@@ -173,7 +219,10 @@ h2 {
 .home #content .entry-content {
 	background:url(images/home_cover_1200x437.jpg);
 	background-size:cover;
-	p
+	padding:30px 30px;
+	p {
+
+	}
 	.box-grey{
 		display:inline-block;
 		position:relative;
@@ -185,4 +234,30 @@ h2 {
 		background:rgba(0,0,0,0.7);
 	}
 }
+.site-info {
+	width:100%;
+	text-align:center;
+	background-color:#999999;
+	color:black;
+}
+.footer-inner {
+	background-color:#333333;
+}
+
+footer>.row{
+	padding-left:15px;
+	padding-right:15px;
+}
+
+
+html, body, div, header, article, section, footer {
+//	outline:1px solid grey;
+}
+
+
+
+
+
+
+
 

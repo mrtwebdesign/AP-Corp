@@ -49,7 +49,7 @@
 
 				</div>
 
-				<nav id="site-navigation" class="col-xs-offset-4 col-sm-offset-4 col-md-offset-3  col-xs-8 col-sm-8 col-md-9 main-navigation" role="navigation">
+				<nav id="site-navigation" class="col-xs-offset-0 col-xs-12 col-sm-offset-0  col-sm-12 col-md-9 col-md-offset-3 main-navigation" role="navigation">
 					<div class="menu-button hidden"><?php _e( 'Primary Menu', 'apcorp' ); ?></div>
 					<?php 
 
