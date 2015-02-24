@@ -22,7 +22,8 @@
 $company_slug = $post->post_name;
 
 $pl_args = array(
-	'post_type' => 'product-line'
+	'post_type' => 'product-line',
+	'category_name' => $company_slug
 	);
 
 $productlines = new WP_Query($pl_args);
