@@ -21,9 +21,12 @@
 		<?php the_content(); 
 $company_slug = $post->post_name;
 
+
+
 $pl_args = array(
 	'post_type' => 'product-line',
-	'category_name' => $company_slug
+	'meta_key' => '_apcorp_company_id',
+	'meta_value' => $company_slug
 	);
 
 $productlines = new WP_Query($pl_args);
