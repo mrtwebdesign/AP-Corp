@@ -11,3 +11,22 @@ a {
 		color: $color__link-hover;
 	}
 }
+
+
+.svg-map-wrap a {
+	color: darken($color__link,30%);
+	text-decoration: underline;
+
+	&:visited {
+		color: darken($color__link-visited,20%);
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: darken($color__link-hover,20%);
+	}
+}
+
+
+
+

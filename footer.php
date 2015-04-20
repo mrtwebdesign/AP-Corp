@@ -14,13 +14,10 @@
 	<div class="row">
 	<div class="col-md-12 footer-inner">
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<?php dynamic_sidebar( 'footer-left' ); ?>
 				</div>
-				<div class="col-md-4">
-					<?php dynamic_sidebar( 'footer-middle' ); ?>
-				</div>
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<?php dynamic_sidebar( 'footer-right' ); ?>
 				</div>
 			</div>
@@ -47,7 +44,9 @@ jQuery(window).load(function() {
 
 
 jQuery(document).ready(function() {
-	//jQuery('header nav').meanmenu();
+	jQuery('header nav').meanmenu({
+		meanScreenWidth: "992",
+	});
 	//jQuery('ul.sf-menu').superfish();
 });
 

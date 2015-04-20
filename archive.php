@@ -9,6 +9,19 @@
 
 get_header(); ?>
 
+
+<?php
+function filter_archive_productlines($query) {
+  if ( !is_admin() && $query->is_main_query() ) {
+
+      $query->set('post_type', array( 'product-line' ) );
+
+  }
+}
+print_r($query);
+add_action('pre_get_posts','filter_archive_productlines');
+?>
+
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 

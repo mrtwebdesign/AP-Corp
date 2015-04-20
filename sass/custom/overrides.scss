@@ -256,7 +256,116 @@ html, body, div, header, article, section, footer {
 object.vanilla-pdf-embed {
 	height:70em;
 }
+.svg-map-wrap{
+	display:block;
+	position:relative;
 
+	$rg:#feff9b;
+	$jw:#ccf7fe;
+
+	svg {
+		background-color:#ffffff;
+		path {
+			stroke-width:0.1;
+			stroke:#000000;
+			&:hover {
+				fill:#f0f0f0;
+			}
+		}
+
+		#MA,#MAe,#ME,#NH,#VT {
+			fill:$jw;
+			&:hover{
+				fill:darken($jw,10%)
+			}
+		}
+
+		#RI,#CT,#MAw,#NY{
+			fill:$rg;
+			&:hover{
+				fill:darken($rg,10%)
+			}		
+		}
+		#NY-outline{
+
+		}
+
+	}
+	#map-legend{
+		display:block;
+		position:absolute;
+		height:80px;
+		width:300px;
+		top:30px;
+		left:30px;
+		border:1px solid #444444;
+		background-color:#f0f0f0;
+		color:#000000;
+		padding:5px 15px;
+	}
+	.members>div>div{
+		line-height:30px;
+	}
+	.rgc{
+		display:inline-block;
+		position:relative;
+		top:5px;
+		height:20px;
+		width:30px;
+		background-color: $rg;
+		outline:1px solid #AAAAAA;
+	}
+	.jwc{
+		display:inline-block;
+		position:relative;
+		top:5px;
+		height:20px;
+		width:30px;
+		background-color: $jw;
+		outline:1px solid #AAAAAA;
+	}
+	.state-label {
+		display:block;
+		position:absolute;
+		color:#888888;
+		font-size:13px;
+		line-height:14px;
+		font-weight:bold;
+		vertical-align: center;
+	}
+	#MA-label{
+		top:69.7%;
+		left:60%;
+		transform: translatey(-7px);
+	}
+	#ME-label{
+		top:30%;
+		left:80%;
+	}
+	#NH-label{
+		top:54%;
+		left:63%;
+	}
+	#VT-label{
+		top:49%;
+		left:54%;
+	}
+	#RI-label{
+		top:77%;
+		left:64%;
+	}
+	#CT-label{
+		top:78%;
+		left:55%;
+	}
+	#NY-label{
+		top:62%;
+		left:35%;
+	}
+
+
+
+}
 
 
 

@@ -31,18 +31,18 @@ $pl_args = array(
 
 $productlines = new WP_Query($pl_args);
 //print_r($productlines);
-echo 'Product lines:';
+//echo 'Product lines:';
 while ( $productlines->have_posts() ){
  $productlines->the_post(); ?>
 
- <a href="<?php the_permalink(); ?>"><?php echo get_the_title( $ID ); ?></a>
+ <!-- a href="<?php the_permalink(); ?>"><?php //echo get_the_title( $ID ); ?></a -->
 
 <? }
 wp_reset_postdata();
 		?>
 
 
-		<br>Product types:
+		<br>Product lines:
 		<?php
 
 		$args = array(

@@ -367,97 +367,102 @@ a {
   a:hover, a:focus, a:active {
     color: #B5B5FF; }
 
+.svg-map-wrap a {
+  color: #0707f0;
+  text-decoration: underline; }
+  .svg-map-wrap a:visited {
+    color: #8931f9; }
+  .svg-map-wrap a:hover, .svg-map-wrap a:focus, .svg-map-wrap a:active {
+    color: #4f4fff; }
+
 /*--------------------------------------------------------------
 5.2 Menus
 --------------------------------------------------------------*/
-#site-navigation {
-  display: block;
-  position: absolute;
-  padding: 0;
-  bottom: 0; }
-
-#menu-topmenubar {
-  clear: both;
-  display: table;
-  padding: 0;
-  width: 100%; }
-  #menu-topmenubar > ul {
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-    width: 100%;
-    display: table-row;
-    background-color: #FFFFFF; }
-    #menu-topmenubar > ul > li {
-      display: table-cell;
-      position: relative; }
-      #menu-topmenubar > ul > li.menu-item-has-children a {
-        padding-right: 10px; }
-      #menu-topmenubar > ul > li.menu-item-has-children:after {
-        font-size: 20px;
-        content: "\f0d7";
-        display: block;
-        position: absolute;
-        color: #444444;
-        top: 10px;
-        right: 15px;
-        font: normal normal normal 14px/1 FontAwesome;
-        font-size: inherit;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-transform: translate(0, 0);
-            -ms-transform: translate(0, 0);
-                transform: translate(0, 0); }
-      #menu-topmenubar > ul > li > a {
-        text-align: center;
-        border-right: 1px solid #DFDFDF; }
-      #menu-topmenubar > ul > li ul {
-        display: none;
-        position: absolute;
-        margin: 0;
-        top: 2em;
-        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-        background-color: #FFFFFF;
-        list-style: none; }
-        #menu-topmenubar > ul > li ul ul {
-          display: none;
-          top: 2em; }
-        #menu-topmenubar > ul > li ul li {
-          left: 100%; }
-          #menu-topmenubar > ul > li ul li a {
-            padding-left: 10px; }
-        #menu-topmenubar > ul > li ul a {
-          width: auto;
-          font-size: 0.80em;
-          padding-top: 4px;
-          padding-bottom: 6px;
-          line-height: 1.0em;
-          border-bottom: 1px solid #DFDFDF; }
-      #menu-topmenubar > ul > li:hover ul {
-        display: block;
-        width: 150%; }
-    #menu-topmenubar > ul a {
-      display: block;
-      text-decoration: none;
-      line-height: 2em;
-      color: #4d4d4d; }
-    #menu-topmenubar > ul .current_page_item > a,
-    #menu-topmenubar > ul .current-menu-item > a,
-    #menu-topmenubar > ul .current_page_ancestor > a {
-      background-color: #dfebef; }
-  #menu-topmenubar a:hover {
-    text-decoration: underline;
-    color: black;
-    background-color: #EEEEEE; }
-
-@media screen and (max-width: 992px) {
+@media screen and (min-width: 993px) {
   #site-navigation {
-    position: relative;
-    padding: 0 15px; }
+    display: block;
+    position: absolute;
+    padding: 0;
+    bottom: 0; }
 
-  #menu-topmenubar > ul > li.menu-item-has-children:after {
-    right: 7px; } }
+  #menu-topmenubar {
+    clear: both;
+    display: table;
+    padding: 0;
+    width: 100%; }
+    #menu-topmenubar > ul {
+      list-style: none;
+      margin: 0;
+      padding-left: 0;
+      width: 100%;
+      display: table-row;
+      background-color: #FFFFFF; }
+      #menu-topmenubar > ul > li {
+        display: table-cell;
+        position: relative; }
+        #menu-topmenubar > ul > li.menu-item-has-children a {
+          padding-right: 10px; }
+        #menu-topmenubar > ul > li.menu-item-has-children:after {
+          font-size: 20px;
+          content: "\f0d7";
+          display: block;
+          position: absolute;
+          color: #444444;
+          top: 10px;
+          right: 15px;
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          -webkit-transform: translate(0, 0);
+              -ms-transform: translate(0, 0);
+                  transform: translate(0, 0); }
+        #menu-topmenubar > ul > li > a {
+          text-align: center;
+          border-right: 1px solid #DFDFDF; }
+        #menu-topmenubar > ul > li ul {
+          display: none;
+          position: absolute;
+          margin: 0;
+          top: 2em;
+          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+          background-color: #FFFFFF;
+          list-style: none; }
+          #menu-topmenubar > ul > li ul ul {
+            display: none;
+            top: 2em; }
+          #menu-topmenubar > ul > li ul li {
+            left: 100%; }
+            #menu-topmenubar > ul > li ul li a {
+              padding-left: 10px; }
+          #menu-topmenubar > ul > li ul a {
+            width: auto;
+            font-size: 0.80em;
+            padding-top: 4px;
+            padding-bottom: 6px;
+            line-height: 1.0em;
+            border-bottom: 1px solid #DFDFDF; }
+        #menu-topmenubar > ul > li:hover ul {
+          display: block;
+          width: 150%; }
+      #menu-topmenubar > ul a {
+        display: block;
+        text-decoration: none;
+        line-height: 2em;
+        color: #4d4d4d; }
+      #menu-topmenubar > ul .current_page_item > a,
+      #menu-topmenubar > ul .current-menu-item > a,
+      #menu-topmenubar > ul .current_page_ancestor > a {
+        background-color: #dfebef; }
+    #menu-topmenubar a:hover {
+      text-decoration: underline;
+      color: black;
+      background-color: #EEEEEE; }
+
+  .no-link > a {
+    pointer-events: none;
+    cursor: default; } }
 /* Small menu */
 .menu-toggle {
   display: none; }
@@ -1154,5 +1159,85 @@ footer > .row {
 
 object.vanilla-pdf-embed {
   height: 70em; }
+
+.svg-map-wrap {
+  display: block;
+  position: relative; }
+  .svg-map-wrap svg {
+    background-color: #ffffff; }
+    .svg-map-wrap svg path {
+      stroke-width: 0.1;
+      stroke: #000000; }
+      .svg-map-wrap svg path:hover {
+        fill: #f0f0f0; }
+    .svg-map-wrap svg #MA, .svg-map-wrap svg #MAe, .svg-map-wrap svg #ME, .svg-map-wrap svg #NH, .svg-map-wrap svg #VT {
+      fill: #ccf7fe; }
+      .svg-map-wrap svg #MA:hover, .svg-map-wrap svg #MAe:hover, .svg-map-wrap svg #ME:hover, .svg-map-wrap svg #NH:hover, .svg-map-wrap svg #VT:hover {
+        fill: #9aeffd; }
+    .svg-map-wrap svg #RI, .svg-map-wrap svg #CT, .svg-map-wrap svg #MAw, .svg-map-wrap svg #NY {
+      fill: #feff9b; }
+      .svg-map-wrap svg #RI:hover, .svg-map-wrap svg #CT:hover, .svg-map-wrap svg #MAw:hover, .svg-map-wrap svg #NY:hover {
+        fill: #fdff68; }
+  .svg-map-wrap #map-legend {
+    display: block;
+    position: absolute;
+    height: 80px;
+    width: 300px;
+    top: 30px;
+    left: 30px;
+    border: 1px solid #444444;
+    background-color: #f0f0f0;
+    color: #000000;
+    padding: 5px 15px; }
+  .svg-map-wrap .members > div > div {
+    line-height: 30px; }
+  .svg-map-wrap .rgc {
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    height: 20px;
+    width: 30px;
+    background-color: #feff9b;
+    outline: 1px solid #AAAAAA; }
+  .svg-map-wrap .jwc {
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    height: 20px;
+    width: 30px;
+    background-color: #ccf7fe;
+    outline: 1px solid #AAAAAA; }
+  .svg-map-wrap .state-label {
+    display: block;
+    position: absolute;
+    color: #888888;
+    font-size: 13px;
+    line-height: 14px;
+    font-weight: bold;
+    vertical-align: center; }
+  .svg-map-wrap #MA-label {
+    top: 69.7%;
+    left: 60%;
+    -webkit-transform: translatey(-7px);
+        -ms-transform: translatey(-7px);
+            transform: translatey(-7px); }
+  .svg-map-wrap #ME-label {
+    top: 30%;
+    left: 80%; }
+  .svg-map-wrap #NH-label {
+    top: 54%;
+    left: 63%; }
+  .svg-map-wrap #VT-label {
+    top: 49%;
+    left: 54%; }
+  .svg-map-wrap #RI-label {
+    top: 77%;
+    left: 64%; }
+  .svg-map-wrap #CT-label {
+    top: 78%;
+    left: 55%; }
+  .svg-map-wrap #NY-label {
+    top: 62%;
+    left: 35%; }
 
 /*# sourceMappingURL=style.css.map */

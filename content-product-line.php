@@ -44,7 +44,7 @@
 
 		?>
 
-		Product types:
+		<!--Product types:-->
 		<?php
 
 		$args = array(
@@ -90,7 +90,7 @@
 			$terms = rtrim( trim( str_replace( '<br />',  $separator, $terms ) ), $separator );
 
 							// display post categories
-			echo  $terms;
+			//echo  $terms;
 		}
 
 
